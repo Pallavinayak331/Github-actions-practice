@@ -1,0 +1,19 @@
+# what is the goal of your workflow 
+# goal: whenever someone changes the python code
+# the linter will check if the syntax,format, indentation (linting)is correct or not 
+name: Auto linter
+
+on:
+  push:
+   paths: "*.py"
+
+jobs:
+ code:
+  runs-on: ubuntu latest
+  # this step will automatically clone the code of the current branch into the runner
+  steps:
+   - name: Checkout/clone the code
+     uses: actions/checkout@v7
+     # this step will install the linting tool.
+   - name: Install linter
+     run: pip install ruff
