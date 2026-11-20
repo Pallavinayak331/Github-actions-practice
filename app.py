@@ -1,4 +1,4 @@
-# this is simple python app code
+# This is simple python app code
 # flask app
 from flask import Flask
 
